@@ -102,17 +102,17 @@ export default function TripBasisProposal() {
   const operatingCosts = [
     { label: 'Hosting & Infrastructure', amount: 2400, className: 'alloc-hosting' },
     { label: 'API Subscriptions', amount: 3000, className: 'alloc-apis' },
-    { label: 'Marketing & Advertising', amount: 12000, className: 'alloc-marketing' },
+    { label: 'Marketing & Advertising', amount: 6000, className: 'alloc-marketing' },
     { label: 'Maintenance & Support', amount: 6000, className: 'alloc-maintenance' },
   ];
 
   const webTotal = useMemo(() => webCosts.reduce((sum, c) => sum + c.amount, 0), []);
   const operatingTotal = useMemo(() => operatingCosts.reduce((sum, c) => sum + c.amount, 0), []);
-  const projectTotal = webTotal + operatingTotal; // dynamic total
+  const projectTotal = webTotal + operatingTotal;
 
   const heroDevLabel = useMemo(() => {
     const thousands = webTotal / 1000;
-    const rounded = Math.round(thousands * 10) / 10; // one decimal
+    const rounded = Math.round(thousands * 10) / 10;
     return `$${rounded.toString()}K`;
   }, [webTotal]);
 
@@ -136,7 +136,7 @@ export default function TripBasisProposal() {
     { label: 'Android App Development', amount: 8000 },
     { label: 'QA & Publishing', amount: 500 },
   ];
-  const androidStoreFee = 25; // one-time
+  const androidStoreFee = 25;
   const androidSubtotal = androidCosts.reduce((s, c) => s + c.amount, 0);
   const androidTotalYear1 = androidSubtotal + androidStoreFee;
 
@@ -144,7 +144,7 @@ export default function TripBasisProposal() {
     { label: 'iOS App Development', amount: 8000 },
     { label: 'QA & Publishing', amount: 500 },
   ];
-  const iosStoreFee = 99; // per year
+  const iosStoreFee = 99;
   const iosSubtotal = iosCosts.reduce((s, c) => s + c.amount, 0);
   const iosTotalYear1 = iosSubtotal + iosStoreFee;
 
@@ -377,91 +377,7 @@ export default function TripBasisProposal() {
         </div>
       </div>
 
-      {/* Page 7: Investment Breakdown */}
-      <div className="pdf-page">
-        <div className="profile-section">
-          <h2 className="section-title">Investment Breakdown</h2>
-          <p className="body-text">Comprehensive cost analysis for development, hosting, APIs, marketing, and mobile applications.</p>
-
-          <div className="grid grid-cols-2 gap-6 mb-8">
-            <div className="card-premium card-gradient-blue">
-              <h3 className="font-bold text-xl text-blue-800 mb-4">Web App (MVP) – Developer Fee</h3>
-              <div className="space-y-3">
-                {webCosts.map((c) => (
-                  <div key={c.label} className="flex justify-between">
-                    <span className="text-gray-700">{c.label}</span>
-                    <span className="font-semibold">${c.amount.toLocaleString()}</span>
-                  </div>
-                ))}
-                <div className="gold-divider my-3" />
-                <div className="flex justify-between font-bold text-lg">
-                  <span>Total (Web MVP)</span>
-                  <span>${webTotal.toLocaleString()}</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="card-premium card-gradient-green">
-              <h3 className="font-bold text-xl text-green-800 mb-4">Annual Operating Costs</h3>
-              <div className="space-y-3">
-                {operatingCosts.map((c) => (
-                  <div key={c.label} className="flex justify-between">
-                    <span className="text-gray-700">{c.label}</span>
-                    <span className="font-semibold">${c.amount.toLocaleString()}</span>
-                  </div>
-                ))}
-                <div className="gold-divider my-3" />
-                <div className="flex justify-between font-bold text-lg">
-                  <span>Annual Operating</span>
-                  <span>${operatingTotal.toLocaleString()}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="card-premium card-gradient-purple mb-6">
-            <h3 className="font-bold text-xl text-purple-800 mb-4 text-center">MVP Development (Developer Fee Only)</h3>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-purple-700 mb-2">${webTotal.toLocaleString()}</div>
-              <p className="text-gray-600">APIs, hosting, and marketing shown separately</p>
-            </div>
-          </div>
-
-          <div className="card-premium">
-            <h4 className="font-semibold text-blue-700 mb-2">Allocation Overview</h4>
-            <div className="allocation-bar mb-3">
-              {allocationSegments.map((seg) => (
-                <span key={seg.label} className={`allocation-segment ${seg.className}`} style={{ width: seg.width }} />
-              ))}
-            </div>
-            <div className="grid grid-cols-2 gap-2 text-sm text-gray-700">
-              {webCosts.map((c) => (
-                <div key={c.label} className="flex items-center justify-between">
-                  <span>{c.label}</span>
-                  <span>${c.amount.toLocaleString()}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="gold-divider my-4" />
-
-            <div className="grid grid-cols-2 gap-2 text-sm text-gray-700">
-              {operatingCosts.map((c) => (
-                <div key={c.label} className="flex items-center justify-between">
-                  <span>{c.label}</span>
-                  <span>${c.amount.toLocaleString()}</span>
-                </div>
-              ))}
-              <div className="flex items-center justify-between font-semibold">
-                <span>Maintenance Monthly</span>
-                <span>${maintenanceMonthly.toLocaleString()}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Page 8: API Integration & Infrastructure */}
+      {/* Page 7: API Integration & Infrastructure */}
       <div className="pdf-page">
         <div className="profile-section">
           <h2 className="section-title">API Integration & Infrastructure</h2>
@@ -509,11 +425,11 @@ export default function TripBasisProposal() {
         </div>
       </div>
 
-      {/* Page 9: Marketing Strategy & Mobile Apps (Optional Mobile Add-ons) */}
+      {/* Page 8: Marketing Strategy */}
       <div className="pdf-page">
         <div className="profile-section">
-          <h2 className="section-title">Marketing Strategy & Mobile Applications</h2>
-          <p className="body-text">Comprehensive marketing approach and native mobile applications for market reach.</p>
+          <h2 className="section-title">Marketing Strategy</h2>
+          <p className="body-text">Comprehensive pre- and post-launch marketing approach for acquisition and growth.</p>
 
           <h3 className="subsection-title">Pre-Launch Marketing</h3>
           <div className="grid grid-cols-2 gap-6 mb-8">
@@ -531,26 +447,6 @@ export default function TripBasisProposal() {
                 {['Google Ads Campaign', 'Retargeting Ads', 'Email Automation', 'Performance Analytics'].map((i) => (
                   <div key={i} className="list-row-premium"><div className="list-row-icon"><CheckCircle className="w-4 h-4" /></div><div className="list-row-text">{i}</div></div>
                 ))}
-              </div>
-            </div>
-          </div>
-
-          <h3 className="subsection-title">Mobile Applications (Optional Add-ons)</h3>
-          <div className="grid grid-cols-2 gap-6 mb-8">
-            <div className="card-premium card-gradient-blue ribbon" data-label="Optional - Not in MVP total">
-              <h4 className="font-bold text-lg text-blue-800 mb-4 flex items-center gap-2"><Smartphone className="w-5 h-5" /> iOS Application</h4>
-              <div className="space-y-3">
-                <div className="flex justify-between"><span className="text-gray-700">Development Cost</span><span className="font-semibold">$8,000</span></div>
-                <div className="flex justify-between"><span className="text-gray-700">App Store Fee</span><span className="font-semibold">$99/year</span></div>
-                <div className="flex justify-between"><span className="text-gray-700">Features</span><span className="font-semibold">Native iOS</span></div>
-              </div>
-            </div>
-            <div className="card-premium card-gradient-green ribbon" data-label="Optional - Not in MVP total">
-              <h4 className="font-bold text-lg text-green-800 mb-4 flex items-center gap-2"><Smartphone className="w-5 h-5" /> Android Application</h4>
-              <div className="space-y-3">
-                <div className="flex justify-between"><span className="text-gray-700">Development Cost</span><span className="font-semibold">$8,000</span></div>
-                <div className="flex justify-between"><span className="text-gray-700">Play Store Fee</span><span className="font-semibold">$25</span></div>
-                <div className="flex justify-between"><span className="text-gray-700">Features</span><span className="font-semibold">Native Android</span></div>
               </div>
             </div>
           </div>
@@ -573,7 +469,7 @@ export default function TripBasisProposal() {
         </div>
       </div>
       
-      {/* Page 10: Web App – Complete Cost */}
+      {/* Page 9: Web App – Complete Cost */}
       <div className="pdf-page">
         <div className="profile-section">
           <h2 className="section-title">Web App – Complete Cost</h2>
@@ -604,7 +500,7 @@ export default function TripBasisProposal() {
         </div>
       </div>
 
-      {/* Page 11: Android App – Complete Cost */}
+      {/* Page 10: Android App – Complete Cost */}
       <div className="pdf-page">
         <div className="profile-section">
           <h2 className="section-title">Android App – Complete Cost</h2>
@@ -622,7 +518,7 @@ export default function TripBasisProposal() {
         </div>
       </div>
 
-      {/* Page 12: iOS App – Complete Cost */}
+      {/* Page 11: iOS App – Complete Cost */}
       <div className="pdf-page">
         <div className="profile-section">
           <h2 className="section-title">iOS App – Complete Cost</h2>
@@ -640,7 +536,7 @@ export default function TripBasisProposal() {
         </div>
       </div>
 
-      {/* Page 10: Company Credentials & Contact */}
+      {/* Page 12: Company Credentials & Contact */}
       <div className="pdf-page">
         <div className="profile-section">
           <h2 className="section-title">Why Choose ORBIS CR?</h2>
@@ -722,5 +618,3 @@ export default function TripBasisProposal() {
     </div>
   );
 }
-
-
