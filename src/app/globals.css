@@ -1,0 +1,840 @@
+/* Professional PDF Company Profile CSS - Landscape Document Style */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+:root {
+  /* Professional Color Palette */
+  --primary-blue: #1E40AF;
+  --secondary-blue: #3B82F6;
+  --accent-gold: #D97706;
+  --text-primary: #1F2937;
+  --text-secondary: #4B5563;
+  --text-muted: #6B7280;
+  --background: #FFFFFF;
+  --section-bg: #F9FAFB;
+  --border-color: #E5E7EB;
+  --highlight-bg: #FEF3C7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background: #F3F4F6;
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* Premium Utilities */
+.card-premium {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(17, 24, 39, 0.06);
+  padding: 1.25rem;
+  color: var(--text-secondary);
+}
+
+.premium-list-item {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+/* Global ultra-premium emphasis for dark text inside cards/sections */
+.profile-section .text-gray-800,
+.profile-section .text-gray-700,
+.card-premium .text-gray-800,
+.card-premium .text-gray-700 {
+  color: var(--text-primary) !important;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.profile-section .text-sm {
+  font-size: 0.95rem;
+}
+
+.profile-section .text-xl {
+  letter-spacing: -0.015em;
+}
+
+.card-gradient-blue {
+  background: linear-gradient(180deg, #EEF2FF 0%, #F0F9FF 100%);
+  border: 1px solid #BFDBFE;
+}
+
+.card-gradient-green {
+  background: linear-gradient(180deg, #ECFDF5 0%, #F0FDF4 100%);
+  border: 1px solid #A7F3D0;
+}
+
+.card-gradient-purple {
+  background: linear-gradient(180deg, #F5F3FF 0%, #FAF5FF 100%);
+  border: 1px solid #DDD6FE;
+}
+
+.soft-shadow {
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+}
+
+.gold-divider {
+  height: 3px;
+  background: linear-gradient(90deg, rgba(217,119,6,0) 0%, #D97706 25%, #D97706 75%, rgba(217,119,6,0) 100%);
+  border-radius: 2px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid var(--border-color);
+  background: var(--section-bg);
+  color: var(--text-primary);
+}
+
+.badge-primary {
+  border-color: #93C5FD;
+  background: #EFF6FF;
+  color: #1D4ED8;
+}
+
+.badge-success {
+  border-color: #86EFAC;
+  background: #ECFDF5;
+  color: #047857;
+}
+
+.ribbon {
+  position: relative;
+}
+.ribbon::after {
+  content: attr(data-label);
+  position: absolute;
+  top: -12px;
+  right: 12px;
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.allocation-bar {
+  width: 100%;
+  height: 12px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #F3F4F6;
+  border: 1px solid var(--border-color);
+}
+
+.allocation-segment {
+  height: 100%;
+  display: inline-block;
+}
+.alloc-dev { background: #BFDBFE; }
+.alloc-mobile { background: #C7D2FE; }
+.alloc-design { background: #FDE68A; }
+.alloc-qa { background: #BBF7D0; }
+.alloc-hosting { background: #A5B4FC; }
+.alloc-apis { background: #93C5FD; }
+.alloc-marketing { background: #FBCFE8; }
+.alloc-maintenance { background: #FDE68A; }
+
+/* PDF Page Layout - Landscape Document Style */
+.pdf-page {
+  width: 297mm; /* A4 Landscape width */
+  min-height: 210mm; /* A4 Landscape height */
+  margin: 0 auto 20px;
+  background: var(--background);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Landscape Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  color: white;
+  padding: 2rem;
+  height: 140mm; /* Landscape height for hero */
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  height: 100%;
+  width: 100%;
+}
+
+.hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-image {
+  flex: 1;
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.hero-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(30, 64, 175, 0.3);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.overlay-content {
+  color: white;
+}
+
+.overlay-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.overlay-text {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 1.5rem 0;
+  max-width: 500px;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hero-stat {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-stat-number {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.hero-stat-label {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+/* Professional Typography */
+.document-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.document-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--primary-blue);
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid var(--accent-gold);
+  padding-bottom: 0.5rem;
+}
+
+.subsection-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
+
+.body-text {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.highlight-text {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  color: var(--primary-blue);
+}
+
+/* Company Logo */
+.company-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1.5rem;
+  background: white;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.company-logo img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Professional Sections */
+.profile-section {
+  padding: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.profile-section:last-child {
+  border-bottom: none;
+}
+
+.section-intro {
+  background: var(--section-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--accent-gold);
+}
+
+/* Services Grid - Landscape Layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.service-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.service-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--primary-blue);
+  margin-bottom: 0.75rem;
+}
+
+.service-description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Stats Grid - Landscape Layout */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1rem;
+  background: var(--section-bg);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Case Studies - Landscape Layout */
+.case-studies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.case-study-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.case-study-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--primary-blue);
+  margin-bottom: 0.75rem;
+}
+
+.case-study-metric {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 2rem;
+  color: var(--accent-gold);
+  margin-bottom: 0.75rem;
+}
+
+.case-study-description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.industry-tag {
+  display: inline-block;
+  background: var(--highlight-bg);
+  color: var(--text-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+/* Team Section - Landscape Layout */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.team-member {
+  text-align: center;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.team-avatar {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1rem;
+  background: var(--primary-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.team-name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.team-role {
+  font-size: 0.9rem;
+  color: var(--primary-blue);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.team-expertise {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Technology Stack - Landscape Layout */
+.tech-category {
+  margin-bottom: 2rem;
+}
+
+.tech-category-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--accent-gold);
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  background: white;
+  color: var(--text-primary);
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Contact Section - Landscape Layout */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.contact-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--section-bg);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  background: var(--primary-blue);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.contact-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.contact-value {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Footer */
+.profile-footer {
+  background: var(--section-bg);
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-logo {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1rem;
+  background: var(--primary-blue);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.footer-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Premium Contact Rows */
+.contact-rows {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.contact-row-premium {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%);
+  box-shadow: 0 8px 24px rgba(17, 24, 39, 0.06);
+}
+
+.contact-row-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+}
+
+.contact-row-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.contact-row-value {
+  margin-left: auto;
+  font-weight: 700;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+/* Premium List Rows (for expertise/marketing/etc.) */
+.list-rows {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+}
+
+.list-row-premium {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 100%);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+.list-row-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+}
+
+.list-row-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+/* Print Styles for 6 A4 Landscape Pages */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  body {
+    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  
+  .pdf-page {
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 20mm !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    background: white !important;
+    border: none !important;
+    width: 297mm !important;
+    height: 210mm !important;
+    overflow: hidden !important;
+    position: relative !important;
+    display: block !important;
+    float: none !important;
+    clear: both !important;
+    box-sizing: border-box !important;
+  }
+  
+  .pdf-page:last-child {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+  
+  /* Force each page to be a new page */
+  .pdf-page + .pdf-page {
+    page-break-before: always !important;
+    break-before: page !important;
+  }
+  
+  .hero-section {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%) !important;
+  }
+  
+  .service-item, .case-study-item, .team-member, .contact-item {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    background: white !important;
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+  }
+  
+  .section-intro, .profile-section {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  
+  /* Ensure text is readable in print */
+  .document-title, .section-title, .subsection-title {
+    color: black !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  
+  /* Force landscape orientation */
+  @page {
+    size: A4 landscape !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Hide any browser-specific elements */
+  .hero-stats, .hero-image-overlay {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  /* Ensure proper page sizing */
+  html, body {
+    width: 297mm !important;
+    height: 210mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+/* Responsive Design for Landscape */
+@media (max-width: 1200px) {
+  .pdf-page {
+    width: 100%;
+    min-height: auto;
+  }
+  
+  .hero-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .services-grid, .case-studies-grid, .team-grid, .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .document-title {
+    font-size: 2.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
